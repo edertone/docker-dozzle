@@ -1,0 +1,13 @@
+services:
+
+  # Dozzle - Real-time Docker log viewer
+  # Accessible at http://localhost:3007
+  # Provides a web interface to view logs of all containers in real-time
+  dozzle:
+    image: amir20/dozzle:latest
+    container_name: dozzle
+    restart: unless-stopped
+    ports:
+      - "3007:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
